@@ -13,14 +13,14 @@ export const loginApi = async (username, password, navigate,dispatch) => {
     try {
         const response = await apiConnect('POST', LOGIN_API, { username, password })
         console.log(response?.data)
-        toast.success(`${response.data.msg}`)
-        localStorage.setItem(process.env.REACT_APP_LOCALHOST_KEY, JSON.stringify(response.data?.result));
+        toast.success(`${response?.data.msg}`)
+        localStorage.setItem(process.env.REACT_APP_LOCALHOST_KEY, JSON.stringify(response?.data?.result));
         dispatch(setCurrentuser(response.data?.result))
         navigate('/')
     } catch (error) {
 
-        console.log("LOGIN ERROR", error.response.data);
-        toast.error(`${error.response.data.msg}`);
+        console.log("LOGIN ERROR", error?.response.data);
+        toast.error(`${error?.response.data.msg}`);
     }
     toast.dismiss(lod)
 
@@ -32,11 +32,11 @@ export const registerApi = async (email, username, password, navigate) => {
     try {
         const response = await apiConnect('POST', RESISTER_API, { email, username, password })
         console.log(response?.data)
-        toast.success(`${response.data.msg}`)
+        toast.success(`${response.data?.msg}`)
         navigate('/login')
     } catch (error) {
-        console.log("LOGIN ERROR", error.response.data);
-        toast.error(`${error.response.data.msg}`);
+        console.log("LOGIN ERROR", error.response?.data);
+        toast.error(`${error.response?.data.msg}`);
     }
     toast.dismiss(lod)
 }

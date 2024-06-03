@@ -14,12 +14,12 @@ export const saveMsgapi = async (items) => {
         const response = await apiConnect('POST', SAVEMSG_API, items)
         console.log(response?.data)
       if(process.env.REACT_APP_NODE_STATE ==="development"){
-          toast.success(`${response.data.msg}`)
+          toast.success(`${response.data?.msg}`)
       }
     } catch (error) {
         console.log("SAVE MSG ERROR", error.response.data);
         if(process.env.REACT_APP_NODE_STATE ==="development"){
-            toast.error(`${error.response.data.msg}`);
+            toast.error(`${error.response?.data?.msg}`);
         }
     }
     toast.dismiss(lod)
@@ -32,13 +32,13 @@ export const updateMsgOnloginapi = async (reciever) => {
         const response = await apiConnect('POST', UPDATEMSGONLOGIN_API, {reciever})
         console.log("UPDATE MSG ON LOGIN RESPONSE",response?.data)
         if(process.env.REACT_APP_NODE_STATE ==="development"){
-            toast.success(`${response.data.msg}`)
+            toast.success(`${response.data?.msg}`)
         }
     } catch (error) {
-        console.log("UPDATE MSG ON LOGIN ERROR", error.response.data);
+        console.log("UPDATE MSG ON LOGIN ERROR", error.response?.data);
         if(process.env.REACT_APP_NODE_STATE ==="development"){
             
-            toast.error(`${error.response.data.msg}`);
+            toast.error(`${error.response.data?.msg}`);
         }
     }
     toast.dismiss(lod)
@@ -52,13 +52,13 @@ export const updateMsgOnchatapi = async (chatid,reciever,all,setUserchatseen) =>
         console.log("UPDATE MSG ONCHAT RESPONSE",response?.data)
         setUserchatseen(response?.data?.result)
         if(process.env.REACT_APP_NODE_STATE ==="development"){
-            toast.success(`${response.data.msg}`)
+            toast.success(`${response.data?.msg}`)
         }
     } catch (error) {
-        console.log("UPDATEMSG ON CHAT ERROR", error?.response.data);
+        console.log("UPDATEMSG ON CHAT ERROR", error?.response?.data);
         if(process.env.REACT_APP_NODE_STATE ==="development"){
             
-            toast.error(`${error?.response.data.msg}`);
+            toast.error(`${error?.response.data?.msg}`);
         }
     }
     toast.dismiss(lod)
@@ -71,10 +71,10 @@ export const deleteMsgapi = async (from,to,msg) => {
     try {
         const response = await apiConnect('POST', DELETEMSG_API, { from,to,message:msg})
         console.log(response?.data)
-        toast.success(`${response.data.msg}`)
+        toast.success(`${response.data?.msg}`)
     } catch (error) {
-        console.log("SEND MSG ERROR", error.response.data);
-        toast.error(`${error.response.data.msg}`);
+        console.log("SEND MSG ERROR", error.response?.data);
+        toast.error(`${error.response.data?.msg}`);
     }
     toast.dismiss(lod)
 
@@ -89,7 +89,7 @@ export const getMsgapi = async (requester,whom,chatId,dispatch) => {
         dispatch(setMessages(response?.data?.result[0]))
         dispatch(setChatid(response?.data?.result[1]))
         if(process.env.REACT_APP_NODE_STATE ==="development"){
-            toast.success(`${response.data.msg}`)
+            toast.success(`${response.data?.msg}`)
             
         }
     } catch (error) {
@@ -97,7 +97,7 @@ export const getMsgapi = async (requester,whom,chatId,dispatch) => {
         console.log("RECEIVE MSG ERROR", error.response.data);
         if(process.env.REACT_APP_NODE_STATE ==="development"){
             
-            toast.error(`${error.response.data.msg}`);
+            toast.error(`${error.response.data?.msg}`);
         }
     }
     toast.dismiss(lod)
@@ -111,7 +111,7 @@ export const getLastseenapi = async (userEmail,setLastseen) => {
         const response = await apiConnect('POST', LAST_ACTIVE_API, {userEmail})
         setLastseen(response?.data?.result.lastActive)
     } catch (error) {
-        console.log("GET LAST SEEN ERROR", error.response.data);
+        console.log("GET LAST SEEN ERROR", error.response?.data);
     }
 
 }
