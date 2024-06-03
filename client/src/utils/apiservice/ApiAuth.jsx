@@ -12,8 +12,8 @@ export const loginApi = async (username, password, navigate,dispatch) => {
     let lod = toast.loading("loading...")
     try {
         const response = await apiConnect('POST', LOGIN_API, { username, password })
-        console.log(response?.data)
-        toast.success(`${response?.data.msg}`)
+        // console.log(response?.data)
+        toast.success(`${response?.data?.msg}`)
         localStorage.setItem(process.env.REACT_APP_LOCALHOST_KEY, JSON.stringify(response?.data?.result));
         dispatch(setCurrentuser(response.data?.result))
         navigate('/')
