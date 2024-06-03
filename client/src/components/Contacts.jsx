@@ -17,7 +17,7 @@ export default function Contacts() {
 
 
   const handleClick = () => {
-    localStorage.removeItem('chatapp')
+    localStorage.removeItem(process.env.REACT_APP_LOCALHOST_KEY)
     socket.disconnect()
     navigate("/login");
   }

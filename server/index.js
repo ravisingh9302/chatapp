@@ -38,9 +38,9 @@ const appserver = app.listen(process.env.PORT, () =>
 
 
 
-// app.get('/', (req, res) => {
-//   res.send('<h1>Hello world</h1>');
-// });
+app.get('/', (req, res) => {
+  res.send('<h1>chatapp backend</h1>');
+});
 
 const io = new Server(appserver, {
   cors: {

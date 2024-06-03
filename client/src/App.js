@@ -7,6 +7,7 @@ import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import Register from "./pages/Register";
 export default function App() {
+  
   if (process.env.REACT_APP_NODE_STATE === 'production') {
     console.log = function () { }
   }
