@@ -89,7 +89,7 @@ export default function ChatInput({chatId}) {
 
   return (
     <div className="bg-[#202C33] grid grid-cols-[5%_90%_5%] items-center px-4  gap-2">
-
+ 
       <div className="button-container flex justify-center text-[#7C8B95] ">
         <div className="emoji text-3xl relative" ref={Ref}>
           <div>

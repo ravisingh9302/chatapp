@@ -49,8 +49,11 @@ const io = new Server(appserver, {
   cors: {
     origin: process.env.CORS_ORIGIN_SOCKET ? process.env.CORS_ORIGIN_SOCKET : "*",
     credentials: true,
+    transports: ['websocket', 'polling'],
+
   },
-  path: "/chat"
+  // path: "/cha",
+  allowEIO3: true
 });
 
 // const count = io.engine.clientsCount;
