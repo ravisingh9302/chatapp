@@ -61,7 +61,7 @@ module.exports.register = async (req, res) => {
       email,
       username,
       password: hashedPassword,
-      avatarImage:`"https://api.dicebear.com/7.x/micah/svg?radius=50&seed=${username}"`
+      avatarImage:`https://api.dicebear.com/7.x/micah/svg?radius=50&seed=${username}`
     });
     // delete user.password;
     return res.status(200).json({
