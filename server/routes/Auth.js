@@ -5,7 +5,7 @@ const {
   getAllUsers,
   setAvatar,
   logOut,
-} = require("../cotrollers/UserController");
+} = require("../controllers/UserController");
 
 
 router.post("/login", login);

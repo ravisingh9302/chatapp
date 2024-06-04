@@ -11,8 +11,8 @@ const app = express();
 require("dotenv").config();
 const uuid = require('uuid');
 const massageModel = require('./model/MessageModel');
-const { setLastseen } = require("./cotrollers/LastseenController")
-const { saveMsg } = require("./cotrollers/messageController")
+const { setLastseen } = require("./controllers/LastseenController")
+const { saveMsg } = require("./controllers/MessageController")
 app.use(cors());
 app.use(express.json());
 

@@ -1,5 +1,5 @@
-const { saveMessage, getMessages,updateMessageOnLogin,updateMessageOnChat,deleteMessage} = require("../cotrollers/messageController");
-const {getLastseen} = require("../cotrollers/LastseenController");
+const { saveMessage, getMessages,updateMessageOnLogin,updateMessageOnChat,deleteMessage} = require("../controllers/MessageController");
+const {getLastseen} = require("../controllers/LastseenController");
 const router = require("express").Router();
 
 router.post("/savemsg/", saveMessage);
