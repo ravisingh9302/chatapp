@@ -13,7 +13,10 @@ const uuid = require('uuid');
 const massageModel = require('./model/MessageModel');
 const { setLastseen } = require("./controllers/LastseenController")
 const { saveMsg } = require("./controllers/MessageController")
-app.use(cors());
+app.use(cors({
+  origin:process.env.CORS_ORIGIN?process.env.CORS_ORIGIN:"*",
+  credentials:true
+}));
 app.use(express.json());
 
 if (process.env.NODE_STATE === 'production') {
@@ -44,7 +47,7 @@ app.get('/', (req, res) => {
 
 const io = new Server(appserver, {
   cors: {
-    origin: process.env.CORS_ORIGIN ? process.env.CORS_ORIGIN : "*",
+    origin: process.env.CORS_ORIGIN_SOCKET ? process.env.CORS_ORIGIN_SOCKET : "*",
     credentials: true,
   },
   path: "/chat"
