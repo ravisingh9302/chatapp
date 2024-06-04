@@ -72,11 +72,11 @@ export default function Register() {
             placeholder="Email"
             name="email"
             onChange={(e) => handleChange(e)}
-            className="bg-transparent p-2 rounded-lg text-whiteborder  w-[100%] border border-[#3DAE43]"
+            className="bg-transparent p-2 rounded-lg text-white   w-[100%] border border-[#3DAE43]"
         
           />
           <input
-            type="password"
+            type="text"
             placeholder="Password"
             name="password"
             onChange={(e) => handleChange(e)}
