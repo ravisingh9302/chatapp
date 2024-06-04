@@ -1,10 +1,10 @@
 
 # Chatapp
-*This is Chat ap created by using React, Express, MongoDB, Socket.io,https://ravisingh-chatapp.vercel.app/ *
+*This is Chat ap created by using React, Express, MongoDB, Socket.io *
 
 ## *[Vist live page](https://ravisingh-chatapp.vercel.app)*
 
-<p align="center" ><img src="https://github.com/ravisingh9302/piano/blob/main/img/screenshot.png" alt="" height="300px"></p>
+<p align="center" ><img src="https://github.com/ravisingh9302/chatapp/blob/main/client/public/Screenshot.png" alt="" height="400px"></p>
 
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
