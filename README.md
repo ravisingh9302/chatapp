@@ -1,5 +1,25 @@
 # Getting Started with Create React App
 
+{
+
+    "version":2,
+    "builds":[
+        {
+            "src":"index.js",
+            "use":"@now/node"
+
+        }
+    ],
+    "routes":[
+        {
+
+            "src":"/(.*)",
+            "dest": "index.js"
+        }
+    ]
+
+}
+
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
